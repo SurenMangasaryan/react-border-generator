@@ -11,7 +11,7 @@ export default function SelectedBorders({ selectPositionBorder, setBorderPositio
   }
 
   return (
-    <div>
+    <div className='box'>
       <label htmlFor="position">Position</label>
       {selectPositionBorder.map(item => {
         return (

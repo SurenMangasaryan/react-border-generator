@@ -20,7 +20,7 @@ export default function BorderRadius({ setBorderRadius, setBorderLeftTop, setBor
     }
 
     return (
-        <div>
+        <div className='box'>
             <label htmlFor="radius">Radius</label>
             <div id='radius'>
                 <input type="range" min={0} max={40} step={1} onChange={(e) => bool ? selectBorderRadius(e) : setTimeout(() => {
@@ -42,7 +42,8 @@ export default function BorderRadius({ setBorderRadius, setBorderLeftTop, setBor
                     }, 500);
                 }} />
 
-                <input type="checkbox" checked={bool} onChange={(e) => setBool(e.target.checked)} />
+                <input className="custom-checkbox" type="checkbox" checked={bool} onChange={(e) => setBool(e.target.checked)} />
+                
             </div>
 
         </div>

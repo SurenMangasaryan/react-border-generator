@@ -44,18 +44,22 @@ export default function Container() {
                 <BorderRadius setBorderRadius={setBorderRadius} setBorderLeftTop={setBorderLeftTop} setBorderLeftBottom={setBorderLeftBottom} setBorderRightTop={setBorderRightTop} setBorderRightBottom={setBorderRightBottom} />
             </div>
 
-            <div className='box' style={{
-                [`border${borderPosition}`]: borderStyle,
-                borderRadius: `${borderRadius}px`,
-                borderTopLeftRadius: `${borderLeftTop}px`,
-                borderBottomLeftRadius: `${borderLeftBottom}px`,
-                borderTopRightRadius: `${borderRightTop}px`,
-                borderBottomRightRadius: `${borderRightBottom}px`
-            }}>
-                <h1>Preview</h1>
+            <div className='two-boxes'>
+                <div className='box-size' style={{
+                    [`border${borderPosition}`]: borderStyle,
+                    borderRadius: `${borderRadius}px`,
+                    borderTopLeftRadius: `${borderLeftTop}px`,
+                    borderBottomLeftRadius: `${borderLeftBottom}px`,
+                    borderTopRightRadius: `${borderRightTop}px`,
+                    borderBottomRightRadius: `${borderRightBottom}px`
+                }}>
+                    <h1>Preview</h1>
+                </div>
 
-                <p>border: {borderStyle};</p>
-                <p>border-radius: {borderRadius}px;</p>
+                <div className='output-box'>
+                    <p>border: {borderStyle};</p>
+                    <p>border-radius: {borderRadius}px;</p>
+                </div>
             </div>
         </div>
     )

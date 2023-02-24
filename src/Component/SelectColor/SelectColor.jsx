@@ -5,7 +5,7 @@ export default function SelectColor({ setBorderColor }) {
     let color;
 
     return (
-        <div>
+        <div className='box'>
             <label htmlFor="color">Color</label>
             <input id='color' type="color" onChange={(e) => {
                 color = setTimeout(() => {
