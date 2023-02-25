@@ -8,7 +8,7 @@ import StylesBorder from '../StylesBorder/StylesBorder'
 
 export default function Container() {
 
-    const [selectTypeBorder, setSelectTypeBorder] = useState([
+    const selectTypeBorder = [
         'solid',
         'dotted',
         'dashed',
@@ -19,14 +19,14 @@ export default function Container() {
         'outset',
         'hidden',
         'none',
-    ]);
-    const [selectPositionBorder, setSelectPositionBorder] = useState([
+    ];
+    const selectPositionBorder = [
         'All', 'Top', 'Right', 'Bottom', 'Left'
-    ]);
+    ];
     const [borderStyle, setBorderStyle] = useState('solid');
     const [borderPosition, setBorderPosition] = useState('');
     const [borderWidth, setBorderWidth] = useState(1);
-    const [borderColor, setBorderColor] = useState('');
+    const [borderColor, setBorderColor] = useState('black');
     const [borderRadius, setBorderRadius] = useState(0);
     const [borderLeftTop, setBorderLeftTop] = useState(0);
     const [borderLeftBottom, setBorderLeftBottom] = useState(0);
@@ -47,6 +47,8 @@ export default function Container() {
             <div className='two-boxes'>
                 <div className='box-size' style={{
                     [`border${borderPosition}`]: borderStyle,
+                    borderColor: `${borderColor}`,
+                    borderWidth: `${borderWidth}px`,
                     borderRadius: `${borderRadius}px`,
                     borderTopLeftRadius: `${borderLeftTop}px`,
                     borderBottomLeftRadius: `${borderLeftBottom}px`,
@@ -57,7 +59,7 @@ export default function Container() {
                 </div>
 
                 <div className='output-box'>
-                    <p>border: {borderStyle};</p>
+                    <p>border: {`${borderStyle}`};</p>
                     <p>border-radius: {borderRadius}px;</p>
                 </div>
             </div>
