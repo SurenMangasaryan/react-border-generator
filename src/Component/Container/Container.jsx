@@ -33,33 +33,34 @@ export default function Container() {
     const [borderRightTop, setBorderRightTop] = useState(0);
     const [borderRightBottom, setBorderRightBottom] = useState(0);
 
+    const borderStyleObj = {
+        borderColor: `${borderColor}`,
+        [`border${borderPosition}`]: borderStyle,
+        borderWidth: `${borderWidth}px`,
+        borderRadius: `${borderRadius}px`,
+        borderTopLeftRadius: `${borderLeftTop}px`,
+        borderBottomLeftRadius: `${borderLeftBottom}px`,
+        borderTopRightRadius: `${borderRightTop}px`,
+        borderBottomRightRadius: `${borderRightBottom}px`
+    }
 
     return (
         <div className='container'>
             <div className='left-side'>
-                <BorderWidth setBorderWidth={setBorderWidth} />
-                <StylesBorder selectTypeBorder={selectTypeBorder} setBorderStyle={setBorderStyle} borderWidth={borderWidth} borderColor={borderColor} />
+                <BorderWidth borderWidth={borderWidth} setBorderWidth={setBorderWidth} />
+                <StylesBorder selectTypeBorder={selectTypeBorder} setBorderStyle={setBorderStyle} />
                 <SelectColor setBorderColor={setBorderColor} />
                 <SelectedBorders selectPositionBorder={selectPositionBorder} setBorderPosition={setBorderPosition} />
                 <BorderRadius setBorderRadius={setBorderRadius} setBorderLeftTop={setBorderLeftTop} setBorderLeftBottom={setBorderLeftBottom} setBorderRightTop={setBorderRightTop} setBorderRightBottom={setBorderRightBottom} />
             </div>
 
             <div className='two-boxes'>
-                <div className='box-size' style={{
-                    [`border${borderPosition}`]: borderStyle,
-                    borderColor: `${borderColor}`,
-                    borderWidth: `${borderWidth}px`,
-                    borderRadius: `${borderRadius}px`,
-                    borderTopLeftRadius: `${borderLeftTop}px`,
-                    borderBottomLeftRadius: `${borderLeftBottom}px`,
-                    borderTopRightRadius: `${borderRightTop}px`,
-                    borderBottomRightRadius: `${borderRightBottom}px`
-                }}>
+                <div className='box-size' style={borderStyleObj}>
                     <h1>Preview</h1>
                 </div>
 
                 <div className='output-box'>
-                    <p>border: {`${borderStyle}`};</p>
+                    <p>border: {`${borderWidth}px ${borderStyle} ${borderColor}`};</p>
                     <p>border-radius: {borderRadius}px;</p>
                 </div>
             </div>
